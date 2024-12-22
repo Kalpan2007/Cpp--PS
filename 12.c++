@@ -2,20 +2,27 @@
 
 
 
-#include<iostream>
+
+//1st 
+#include <iostream>
 using namespace std;
 
-void add(int arr[],int l){
-    int nl = l+1;
-    arr[nl] = 6;
+void add(int arr[], int l)
+{
+    int arr2[l + 1];
+    for (int i = 0; i < l; i++){
+        arr2[i] = arr[i];
+    }
+    arr2[l] = 6;
+
+    for(int j =0 ; j < l+1 ; j++){
+        cout << arr2[j] << " ";
+    }
 }
 
-int main(){
+int main()
+{
     int arr[] = {1,2,3,4,5};
-    int lenght = sizeof(arr)/sizeof(arr[0]);
-    add(arr,lenght);
-
-    for(int i =0;i<=lenght;i++){
-        cout << arr[i] << " ";
-    }
+    int l = sizeof(arr)/sizeof(arr[0]);
+    add(arr,l);
 }
